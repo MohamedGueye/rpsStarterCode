@@ -1,14 +1,15 @@
 // Task 1: Create a function that randomly chooses among 'rock', 'paper', or 'scissors'.
 var generateComputerChoice = function () {
     // Task 1, Step 1: Create an array with three elements ("rock", "paper" and "scissors").
-        
+        var rps = ["rock", "paper", "scissors"]
     // Task 1, Step 2: Use the JavaScript Math function to generate a random whole
     // number between 0 and 2. Be sure to save it to a variable.
-        
+        var random = Math.floor(Math.random() * 2);
     // Task 1, Step 3: Use this randomly generated number to pull a value from the
     // array (eg myArray[randomNum])
-        
+       var i = rps[random]
     // Task 1, Step 4: return this new value
+    return i;
         
 };
 
@@ -22,9 +23,39 @@ var pickWinner = function (userChoice, computerChoice) {
        
     // Task 2, Step 2: Depending on who is the winner of the game console.log
     // either "user wins", "computer wins" or "draw"
-
+    if (userChoice === computerChoice) {
+           console.log("It's a draw"); 
+       }
+       else {
+           
+       
+       if (userChoice === "paper"){
+           if (computerChoice === "rock"){
+               console.log("User Wins");
+           }
+           if (computerChoice === "scissors"){
+              console.log("Computer Wins")
+           }
+       }
+       if (userChoice === "scissors"){
+           if (computerChoice === "paper"){
+               console.log("User Wins")
+           }
+           if (computerChoice === "rock"){
+               console.log("Computer Wins")
+           }
+       }
+       if (userChoice === "rock"){
+           if (computerChoice === "scissors"){
+               console.log("User Wins")
+           }
+           if (computerChoice === "paper"){
+               console.log("Computer Wins")
+           }
+       }
+       };
     // Task 4: Show `computerChoice` in HTML after the words "Computer's choice:"
-    
+    $('#computer-choice').html(computerChoice)
     // Task 5: Show the winner in HTML after the word "Winner:"
 };
 
